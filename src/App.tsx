@@ -1,7 +1,7 @@
 import { Authenticated, GitHubBanner, Refine } from "@refinedev/core";
 import { DevtoolsPanel, DevtoolsProvider } from "@refinedev/devtools";
 import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
-// min 1:30:00 https://www.youtube.com/watch?v=6a3Dz8gwjdg&t=2409s&ab_channel=JavaScriptMastery
+// min 2:25:00 https://www.youtube.com/watch?v=6a3Dz8gwjdg&t=2409s&ab_channel=JavaScriptMastery
 import {
   ErrorComponent,
   ThemedLayoutV2,
