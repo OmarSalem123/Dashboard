@@ -1,7 +1,7 @@
-import { Authenticated, GitHubBanner, Refine } from "@refinedev/core";
+import { Authenticated, Refine } from "@refinedev/core";
 import { DevtoolsPanel, DevtoolsProvider } from "@refinedev/devtools";
 import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
-// min 2:25:00 https://www.youtube.com/watch?v=6a3Dz8gwjdg&t=2409s&ab_channel=JavaScriptMastery
+// min 3:45:00 https://www.youtube.com/watch?v=6a3Dz8gwjdg&t=2409s&ab_channel=JavaScriptMastery
 import {
   ErrorComponent,
   ThemedLayoutV2,
@@ -11,7 +11,7 @@ import {
 import "@refinedev/antd/dist/reset.css";
 
 import { authProvider, dataProvider, liveProvider } from "./providers"; 
-import { Home, ForgotPassword, Login, Register } from "./pages";
+import { Home, ForgotPassword, Login, Register, CompanyListPage,  } from "./pages";
 import routerBindings, {
   CatchAllNavigate,
   DocumentTitleHandler,
@@ -23,13 +23,14 @@ import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 
 import Layout from "./components/layout";
 import { resources } from "./config/resources";
+import Create from "./pages/company/create";
+import Edit from "./pages/company/edit";
 
 
 
 function App() {
   return (
     <BrowserRouter>
-      <GitHubBanner />
       <RefineKbarProvider>
           <AntdApp>
             <DevtoolsProvider>
@@ -55,6 +56,11 @@ function App() {
                     </Authenticated>}
                   >
                     <Route index element={<Home />} />
+                    <Route path="/companies" >
+                      <Route index element={<CompanyListPage />} />
+                      <Route path="new" element={<Create />} />
+                      <Route path="edit/:id" element={<Edit />} />
+                    </Route>
                   </Route>
                 </Routes>
 
